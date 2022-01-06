@@ -19,7 +19,8 @@ curl -lO -L https://github.com/ariary/vodka/releases/latest/download/vodka
 ./vodka
 
 ## You are now under the radar
- vodka » [command]
+vodka » echo "Hy SIEM team! Do you find me?" > /dev/null 2>&1  #you are allowed to be a bit cocky
+vodka » [command]
 ```
 
 ## Hide from
