@@ -23,6 +23,10 @@ vodka » echo "Hi SIEM team! Do you find me?" > /dev/null 2>&1  #you are allowed
 vodka » [command]
 ```
 
+Keyword for vodka console:
+* `ring`: enable ring mode ie each command is launched with plenty others to cover tracks (from solution that monitor system call)
+* `exit`: exit vodka console
+
 ### from non interactive shell
 
 Imagine you have a non interactive shell (webshelk or blind rce), you could use `encrypt` and `decrypt` subcommand.
