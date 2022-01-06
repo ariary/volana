@@ -4,7 +4,7 @@
  <h4> Shell command obfuscation to avoid SIEM detection </h4>
  <p> During pentest, an important aspect is to be stealth. For this reason you should clear your tracks after your passage. Nevertheless, many infrastructures log command and send  them to a SIEM in a real time making the cleaning part alone useless.<br><br><code>vodka</code> provide a simple way to hide commands executed on compromised machine by providing it self shell runtime (enter your command, vodka execute for you).</p>
 
-  <p><strong><code>{ <a href="#usage">Use it</a> ; <a href="#hide-from">🧊<sub>(hide from)</sub></a>; <a href="#detection">👁️<sub>(detected by)</sub></a> } </code></strong></p>
+  <p><strong><code>{ <a href="#usage">Use it</a> ; <a href="#hide-from">🧊<sub>(hide from)</sub></a>; <a href="#visible-for">👁️<sub>(detected by)</sub></a> } </code></strong></p>
 </div>
 
 ## Usage
@@ -58,10 +58,22 @@ Copy encrypted command and executed it with your rce **on target machine**
 ***Why not just hide command with `echo [command] | base64` ?***
 And decode on target with `echo [encoded_command] | base64 -d | bash`
 
-Cause we want to make investigation difficult and base64 isn't a real brake
-
-## Hide from
-
-Only the `vodka` lauch command line will be catched
+Because we want to be protected against system that trigger alert for `base64` use or that seek base64 text in command. Also we want to make investigation difficult and base64 isn't a real brake.
 
 ## Detection
+
+Keep in mind that `vodka` is not a miracle that will make you totally invisible. It aim is to make intrusion detection and investigation harder.
+
+By detected we mean if we are able to trigger an alert if a certain command is executed.
+
+
+### Hide from
+
+Only the `vodka` launch command line will be catched
+
+### Visible for
+
+
+
+* System that have alert for unknown command (vodka one)
+* ... To do
