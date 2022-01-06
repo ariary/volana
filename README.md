@@ -29,7 +29,7 @@ Keyword for vodka console:
 
 ### from non interactive shell
 
-Imagine you have a non interactive shell (webshelk or blind rce), you could use `encrypt` and `decrypt` subcommand.
+Imagine you have a non interactive shell (webshell or blind rce), you could use `encrypt` and `decrypt` subcommand.
 Previously, you need to build `vodka` with embedded encryption key.
 
 **On attacker machine**
