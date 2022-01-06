@@ -51,6 +51,10 @@ Copy encrypted command and executed it with your rce **on target machine**
 
 ```
 
+***Why not just hide command with `echo [command] | base64` ?***
+And decode on target with `echo [encoded_command] | base64 -d | bash`
+
+Cause we want to make investigation difficult and base64 isn't a real brake
 
 ## Hide from
 
