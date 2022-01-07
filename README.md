@@ -11,7 +11,7 @@
 
 ## Usage
 
-You need to get an interactive shell. (Find a way to spawned it, you are a hacker, it's your job ! [otherwise](#from-non-interactive-shell)). Then download it on target machine and launch it. that's it, now you can type the command you want to be stealthy executed 
+You need to get an interactive shell. (Find a way to spawn it, you are a hacker, it's your job ! [otherwise](#from-non-interactive-shell)). Then download it on target machine and launch it. that's it, now you can type the command you want to be stealthy executed 
 ```shell
 ## Download it from github release
 ## If you do not have internet access from compromised machine, find another way
