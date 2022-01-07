@@ -75,7 +75,8 @@ Only the `volana` launch command line will be catched
 * Detection systems that are based on history files
   * `.bash_history`, ".zsh_history" etc ..
 * Detection systems that are based on bash debug traps
-
+* Detection systems that are based on sudo built-in logging system
+ 
 ### Visible for
 
 * Detection systems that have alert for unknown command (volana one)
@@ -88,7 +89,22 @@ Only the `volana` launch command line will be catched
 * Terminal (tty) recorder (`script`, `screen -L`, [`sexonthebash`](https://github.com/ariary/sexonthebash), `ovh-ttyrec`, etc..)
   * Easy to detect & avoid: `pkill -9 script`
   * Not a common case
-  * `screen` is a bit more difficult to avoid, however it does not register input (secret input => avoiding)
+  * `screen` is a bit more difficult to avoid, however it does not register input (secret input: `stty -echo` => avoid)
+* Detection systems that are based on syscall (eg auditd,LKML/eBPF)
+  * Difficult to analyze, could be make unreadable by making several diversion syscalls
+* Custom `LD_PRELOAD` injection to make log
+  * Not a common case at all
+
+## Bug bounty
+
+Sorry for the clickbait title, but no money will be provided for contibutors. 🐛
+Let me know if you have found:
+* a way to detect `volana`
+* a way to spy console that don't detect `volana` commands
+* a way to avoid a detection system
+
+[Report here](https://github.com/ariary/volana/issues/new/choose)
+
  
 ## Credit
 * [8 ways to spy on console](https://github.com/annmuor/zn2021_8ways]
