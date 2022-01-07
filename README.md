@@ -98,7 +98,8 @@ Only the `volana` launch command line will be catched
 ## Bug bounty
 
 Sorry for the clickbait title, but no money will be provided for contibutors. 🐛
-Let me know if you have found:
+
+ Let me know if you have found:
 * a way to detect `volana`
 * a way to spy console that don't detect `volana` commands
 * a way to avoid a detection system
