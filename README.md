@@ -6,7 +6,7 @@
 
 <p><strong><pre><code>{ <a href="#usage">Use it</a> ; <a href="#hide-from">🌚<sub>(hide from)</sub></a>; <a href="#visible-for">🌞<sub>(detected by)</sub></a> } </code></pre></strong></p>
 <h4> Shell command obfuscation to avoid SIEM/detection system </h4>
- <p> During pentest, an important aspect is to <b>be stealth</b>. For this reason you should <b>clear your tracks after your passage</b>. Nevertheless, many infrastructures log command and send  them to a SIEM in a real time making the cleaning part alone useless.<br><br><code>volana</code> provide a simple way to hide commands executed on compromised machine by providing it self shell runtime (enter your command, volana execute for you). Like this y you <b>clear your tracks DURING your passage</b></p>
+ <p> During pentest, an important aspect is to <b>be stealth</b>. For this reason you should <b>clear your tracks after your passage</b>. Nevertheless, many infrastructures log command and send  them to a SIEM in a real time making the afterwards cleaning part alone useless.<br><br><code>volana</code> provide a simple way to hide commands executed on compromised machine by providing it self shell runtime (enter your command, volana execute for you). Like this y you <b>clear your tracks DURING your passage</b></p>
 </div>
 
 ## Usage
