@@ -71,7 +71,9 @@ By detected we mean if we are able to trigger an alert if a certain command has 
 
 Only the `vodka` launch command line will be catched
 
-* Detection systems that are based on history files
+
+* Detection systems that are based on history command output
+* Detection systems that are based on historic files
   * `.bashrc`,`zshrc`, `bash_history` etc ..
 
 ### Visible for
