@@ -36,8 +36,6 @@ Previously, you need to build `volana` with embedded encryption key.
 
 **On attacker machine**
 ```shell
-## ATTACKER MACHINE
-
 ## Build volana with encryption key
 make build.volana-with-encryption
 
