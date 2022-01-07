@@ -64,7 +64,7 @@ Because we want to be protected against system that trigger alert for `base64` u
 
 Keep in mind that `vodka` is not a miracle that will make you totally invisible. It aim is to make intrusion detection and investigation harder.
 
-By detected we mean if we are able to trigger an alert if a certain command is executed.
+By detected we mean if we are able to trigger an alert if a certain command has been executed.
 
 
 ### Hide from
