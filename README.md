@@ -71,10 +71,10 @@ By detected we mean if we are able to trigger an alert if a certain command has 
 
 Only the `volana` launch command line will be catched
 
-
 * Detection systems that are based on history command output
-* Detection systems that are based on historic files
+* Detection systems that are based on history files
   * `.bash_history`, ".zsh_history" etc ..
+* Detection systems that are based on bash debug traps
 
 ### Visible for
 
@@ -82,3 +82,12 @@ Only the `volana` launch command line will be catched
 * Detection systems that are based on keylogger
   * Easy to avoid: copy/past commands
   * Not a common case
+* Detection systems that are based on syslog files (e.g. `/var/log/auth.log`)
+  * Only for `sudo` or `su` commands
+  * syslog file could be modified and thus be poisoned as you wish (e.g for */var/log/auth.log*:`logger -p auth.info "No hacker is poisoning your syslog solution, don't worry"
+* Terminal (tty) recorder (`script`, `ovh-ttyrec`, etc..)
+  * Easy to detect & avoid: `pkill -9 script`
+ 
+## Credit
+* [8 ways to spy on console](https://github.com/annmuor/zn2021_8ways]
+* [moonwalk](https://github.com/mufeedvh/moonwalk): similar tool that clear tracks AFTER passage
