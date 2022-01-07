@@ -1,7 +1,7 @@
 
 <div align="center">
 <h3><i>volana<sub> (moon in malagasy)</i></h3>
-<img src="https://github.com/ariary/vodka/blob/main/img/moon.png">
+<img src="https://github.com/ariary/volana/blob/main/img/moon.png">
 
 
 <p><strong><pre><code>{ <a href="#usage">Use it</a> ; <a href="#hide-from">🌚<sub>(hide from)</sub></a>; <a href="#visible-for">🌞<sub>(detected by)</sub></a> } </code></pre></strong></p>
