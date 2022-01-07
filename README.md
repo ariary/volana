@@ -76,7 +76,7 @@ Only the `volana` launch command line will be catched
 
 * Detection systems that are based on history command output
 * Detection systems that are based on historic files
-  * `.bashrc`,`zshrc`, `bash_history` etc ..
+  * `.bash_history`, ".zsh_history" etc ..
 
 ### Visible for
 
