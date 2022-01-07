@@ -71,9 +71,12 @@ By detected we mean if we are able to trigger an alert if a certain command has 
 
 Only the `vodka` launch command line will be catched
 
+* Detection systems that are based on history files
+  * `.bashrc`,`zshrc`, `bash_history` etc ..
+
 ### Visible for
 
-
-
-* System that have alert for unknown command (vodka one)
-* ... To do
+* Detection systems that have alert for unknown command (vodka one)
+* Detection systems that are based on keylogger
+  * Easy to avoid: copy/past commands
+  * Not a common case
