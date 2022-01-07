@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"volana/pkg/command"
 	"volana/pkg/volana"
 )
@@ -12,7 +11,6 @@ func main() {
 		volana.Prefix()
 		cmd := volana.GetCommandInteractive(&historic)
 		command.ManageSpecialCase(cmd)
-		output := command.Exec(cmd)
-		fmt.Println(output)
+		command.Exec(cmd)
 	}
 }

@@ -3,6 +3,7 @@ package command
 import (
 	"fmt"
 	"io"
+	"log"
 	"os"
 	"os/exec"
 	"regexp"
@@ -19,37 +20,57 @@ func ManageSpecialCase(cmd string) {
 
 //Exec a command and return the output as the string. (return also stderr).
 //pipe: if a command failed, it is write to stderr but the command keeps running
-func Exec(cmd string) (result string) {
+//TODO: modify for pipe: case when len > 1 and simple case
+func Exec(cmd string) {
 	cmds := SplitPipe(cmd)
 
-	var stderr string
 	var input string
 	var output string
 
-	for i := 0; i < len(cmds); i++ {
-		shell := exec.Command("/bin/sh", "-c", cmd)
-		stdin, err := shell.StdinPipe()
+	if len(cmds) == 1 {
+		args := strings.Fields(cmd)
+		command := exec.Command(args[0], args[1:]...)
+		command.Stdout = os.Stdout
+		command.Stderr = os.Stderr
+		command.Stdin = os.Stdin
+		err := command.Run()
 		if err != nil {
-			fmt.Println("Exec:", err)
+			log.Fatalf("Run command failed with %s\n", err)
 		}
+	} else { //pipe command
+		for i := 0; i < len(cmds); i++ {
+			args := strings.Fields(cmd)
+			command := exec.Command(args[0], args[1:]...)
+			if i == len(cmds)-1 { //Last command of the pipe -> show output in real time
+				command.Stdout = os.Stdout
+				command.Stderr = os.Stderr
+				command.Stdin = os.Stdin
+				err := command.Run()
+				if err != nil {
+					log.Fatalf("Run command failed with %s\n", err)
+				}
+			} else { //we are within pipe
+				stdin, err := command.StdinPipe()
+				if err != nil {
+					fmt.Println("Exec:", err)
+				}
 
-		go func() { //take precedent output of command as input (pipe)
-			defer stdin.Close()
-			io.WriteString(stdin, input)
-		}()
+				go func() { //take precedent output of command as input (pipe)
+					defer stdin.Close()
+					io.WriteString(stdin, input)
+				}()
 
-		out, err2 := shell.CombinedOutput()
-		output = strings.Trim(string(out), "\n")
-		if err2 != nil {
-			stderr += string(output)
-		} else {
-			input = output //for pipe
+				out, err2 := command.CombinedOutput()
+				output = strings.Trim(string(out), "\n")
+				if err2 != nil {
+					command.Stderr.Write([]byte(output))
+				} else {
+					input = output //for pipe
+				}
+			}
 		}
 	}
-	if stderr != "" {
-		output += output + "\n" + stderr
-	}
-	return output
+
 }
 
 //Take a command in input and return a slice of each command separated in order, if there is a pipe.
