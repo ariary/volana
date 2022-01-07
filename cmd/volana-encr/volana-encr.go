@@ -27,7 +27,7 @@ func main() {
 			if err != nil {
 				fmt.Println("error encrypting your classified text: ", err)
 			}
-			fmt.Println("encr:", encText)
+			fmt.Println(encText)
 		},
 	}
 
