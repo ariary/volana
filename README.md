@@ -76,6 +76,7 @@ Only the `volana` launch command line will be catched
   * `.bash_history`, ".zsh_history" etc ..
 * Detection systems that are based on bash debug traps
 * Detection systems that are based on sudo built-in logging system
+* Detection systems tracing all processes syscall system-wide (eg `opensnoop`)
  
 ### Visible for
 
