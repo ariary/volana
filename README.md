@@ -81,7 +81,7 @@ Only the `volana` launch command line will be catched
   * Easy to detect & avoid: `pkill -9 script`
   * Not a common case
   * `screen` is a bit more difficult to avoid, however it does not register input (secret input: `stty -echo` => avoid)
-  * Could be avoid with `volana` with encryption 
+  * Command detection Could be avoid with `volana` with encryption 
 
 ### Visible for
 
