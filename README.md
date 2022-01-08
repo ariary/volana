@@ -77,7 +77,12 @@ Only the `volana` launch command line will be catched
 * Detection systems that are based on bash debug traps
 * Detection systems that are based on sudo built-in logging system
 * Detection systems tracing all processes syscall system-wide (eg `opensnoop`)
- 
+* Terminal (tty) recorder (`script`, `screen -L`, [`sexonthebash`](https://github.com/ariary/sexonthebash), `ovh-ttyrec`, etc..)
+  * Easy to detect & avoid: `pkill -9 script`
+  * Not a common case
+  * `screen` is a bit more difficult to avoid, however it does not register input (secret input: `stty -echo` => avoid)
+  * Could be avoid with `volana` with encryption 
+
 ### Visible for
 
 * Detection systems that have alert for unknown command (volana one)
@@ -87,10 +92,6 @@ Only the `volana` launch command line will be catched
 * Detection systems that are based on syslog files (e.g. `/var/log/auth.log`)
   * Only for `sudo` or `su` commands
   * syslog file could be modified and thus be poisoned as you wish (e.g for */var/log/auth.log*:`logger -p auth.info "No hacker is poisoning your syslog solution, don't worry"
-* Terminal (tty) recorder (`script`, `screen -L`, [`sexonthebash`](https://github.com/ariary/sexonthebash), `ovh-ttyrec`, etc..)
-  * Easy to detect & avoid: `pkill -9 script`
-  * Not a common case
-  * `screen` is a bit more difficult to avoid, however it does not register input (secret input: `stty -echo` => avoid)
 * Detection systems that are based on syscall (eg auditd,LKML/eBPF)
   * Difficult to analyze, could be make unreadable by making several diversion syscalls
 * Custom `LD_PRELOAD` injection to make log
