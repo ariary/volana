@@ -13,6 +13,11 @@ import (
 // Manage special case by looking at the command itself
 func ManageSpecialCase(cmd string) {
 	switch cmd {
+//	case "cd":
+//		if len(args) < 2 {
+//        		return  errors.New("path required")
+//    		}
+//    		os.Chdir(args[1])
 	case "exit":
 		os.Exit(0)
 	}
