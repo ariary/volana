@@ -69,7 +69,7 @@ By detected we mean if we are able to trigger an alert if a certain command has 
 
 ### Hide from
 
-Only the `volana` launch command line will be catched
+Only the `volana` launching command line will be catched
 
 * Detection systems that are based on history command output
 * Detection systems that are based on history files
