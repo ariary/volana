@@ -91,7 +91,7 @@ Only the `volana` launching command line will be catched
   * Not a common case
 * Detection systems that are based on syslog files (e.g. `/var/log/auth.log`)
   * Only for `sudo` or `su` commands
-  * syslog file could be modified and thus be poisoned as you wish (e.g for */var/log/auth.log*:`logger -p auth.info "No hacker is poisoning your syslog solution, don't worry"
+  * syslog file could be modified and thus be poisoned as you wish (e.g for */var/log/auth.log*:`logger -p auth.info "No hacker is poisoning your syslog solution, don't worry"`)
 * Detection systems that are based on syscall (eg auditd,LKML/eBPF)
   * Difficult to analyze, could be make unreadable by making several diversion syscalls
 * Custom `LD_PRELOAD` injection to make log
