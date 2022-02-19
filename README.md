@@ -62,7 +62,7 @@ Because we want to be protected against systems that trigger alert for `base64` 
 
 ## Detection
 
-Keep in mind that `volana` is not a miracle that will make you totally invisible. It aim is to make intrusion detection and investigation harder.
+Keep in mind that `volana` is not a miracle that will make you totally invisible. Its aim is to make intrusion detection and investigation harder.
 
 By detected we mean if we are able to trigger an alert if a certain command has been executed.
 
