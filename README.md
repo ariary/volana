@@ -69,7 +69,7 @@ By detected we mean if we are able to trigger an alert if a certain command has 
 
 ### Hide from
 
-Only the `volana` launching command line will be catched
+Only the `volana` launching command line will be catched. 🧠 **However, by adding a space** before executing it, the default bash behavior is to not save it
 
 * Detection systems that are based on history command output
 * Detection systems that are based on history files
