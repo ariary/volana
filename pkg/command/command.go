@@ -40,7 +40,7 @@ func Exec(cmd string) {
 		command.Stdin = os.Stdin
 		err := command.Run()
 		if err != nil {
-			log.Fatalf("Run command failed with %s\n", err)
+			fmt.Println("Run command failed with %s\n", err)
 		}
 	} else { //pipe command
 		for i := 0; i < len(cmds); i++ {
